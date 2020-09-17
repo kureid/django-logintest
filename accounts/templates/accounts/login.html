@@ -1,0 +1,21 @@
+{% extends 'accounts/base.html' %} {% block title %} login {% endblock title %}
+{% block h1 %} ログイン {% endblock h1 %} {% block contents %}
+
+<p>{{ message }}</p>
+<form action="" method="POST">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+    <tr>
+      <td colspan="2"><input type="submit" value="ログイン" /></td>
+    </tr>
+    <tr>
+      <td>
+        <button>
+          <a href="{% url 'accounts:sign_up' %}">新規ユーザ登録</a>
+        </button>
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock contents %}
